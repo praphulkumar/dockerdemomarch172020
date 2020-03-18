@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+ praphul:
+         image: praphulapp:v12
+         build: . # build using Dockerfile which is at current location
+         container_name: praphulpycompose
+         ports: 
+          - "1913:5000"
+

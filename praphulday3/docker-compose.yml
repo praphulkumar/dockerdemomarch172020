@@ -1,0 +1,6 @@
+version: '2.2'
+services:
+        praphulapp1:
+                image: alpine
+                container_name: praphul1
+                command: ping fb.com
