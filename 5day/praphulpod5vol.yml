@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: praphulpod6
+  name: praphulpod6
+  namespace: praphul
+spec:
+  volumes:
+   - name: praphulvol # this will create a volume with this name
+     hostPath:
+      path: /etc #  this  directory wil be from  minion location where your pod got scheduled
+      type: Directory
+  containers:
+  - image: alpine
+    name: praphulpod6
+    command: ["/bin/sh","-c","ping fb.com"] #this will replace entry point in docker
+    volumeMounts:
+     - name: praphulvol
+       mountPath: /praphuldata #   this location will be created  inside  POD

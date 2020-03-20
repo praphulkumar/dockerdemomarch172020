@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: praphulpod5
+  name: praphulpod5
+  namespace: praphul
+spec:
+  containers:
+  - image: alpine
+    name: praphulpod5
+    command: ["/bin/sh","-c","ping $myvar"] #this will replace entry point in docker
+    env:
+     - name: myvar   # this name  can be anything  and we can use this name in pod
+       valueFrom:
+        configMapKeyRef:
+         name: prapcm1  #  this will be name of configMap
+         key: x   #  this will be key of configMAP
+

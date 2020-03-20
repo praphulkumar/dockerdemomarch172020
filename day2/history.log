@@ -1,0 +1,464 @@
+    1  clear
+    2  ls 
+    3  who
+    4  ls
+    5  pwd
+    6  who
+    7  clear
+    8  uname
+    9  uname -r
+   10  docker --version
+   11  docker search mysql
+   12  clear
+   13  docker images
+   14  docker run --name praphul alpine ping google.com
+   15  docker ps -a
+   16  clear
+   17  docker ps -a
+   18  clear
+   19  docker run --name praphul alpine ping fb.com
+   20  docker rm praphul
+   21  docker ps -a
+   22  docker run -d --name praphul alpine ping fb.com
+   23  clear
+   24  docker ps -a
+   25  docker logs praphul
+   26  ddocker rm praphul
+   27  docker rm praphul
+   28  docker stop praphul
+   29  docker rm praphul
+   30  docker run -d --name alpine ping google.com
+   31  docker run -d --name praphul alpine ping google.com
+   32  clear
+   33  cd
+   34  cd praphul/
+   35  vim Dockerfile
+   36  rm .Dockerfile.swp
+   37  ls
+   38  docker build -t praphulapp1603:v1 .
+   39  docker run -it --name praphul1 praphulapp1603:v1 bash
+   40  clear
+   41  docker ps -aq
+   42  docker ps -a
+   43  docker run -d --name praphul1 -p 1603:80 praphulapp1603:v1
+   44  docker run -d --name praphul1 -p 1604:80 praphulapp1603:v1
+   45  docker run -d --name praphul1 -p 1694:80 praphulapp1603:v1
+   46  docker run -d --name praphul1 -p 1307:80 praphulapp1603:v1
+   47  docker run -d --name praphul1 -p 13007:80 praphulapp1603:v1
+   48  docker run -d --name praphul2 -p 13007:80 praphulapp1603:v1
+   49  clear
+   50  docker ps -a
+   51  docker -ps
+   52  docker ps
+   53  cd
+   54  pwd
+   55  mkdir praphul
+   56  ls
+   57  git clone https://github.com/microsoft/project-html-website.git
+   58  ls
+   59  cd praphul/
+   60  ls
+   61  ls ../
+   62  pwd
+   63  ls
+   64  mv ../project-html-website .
+   65  pwd
+   66  ls
+   67  ls project-html-website/
+   68  ls ../
+   69  clear
+   70  ls
+   71  vim Dockerfile
+   72  ls
+   73  clear
+   74  mkdir day2
+   75  ls
+   76  cd day2
+   77  git clone https://github.com/praphulkumar/dockerdemomarch172020.git
+   78  ls
+   79  cd dockerdemomarch172020/
+   80  ls
+   81  clear
+   82  vim praphul.html
+   83  cd day2/
+   84  cd dockerdemomarch172020/
+   85  rm .praphul.html.swp 
+   86  ls
+   87  vim praphul.html
+   88   wget  https://img.medscape.com/thumbnail_library/dt_200121_coronavirus_800x450.jpg
+   89  ls
+   90  mv dt_200121_coronavirus_800x450.jpg corona.jpg
+   91  clear
+   92  ls
+   93  vim Dockerfile
+   94  mv praphul.html index.html
+   95  ls
+   96  vim .dockerignorefile
+   97  ls -a
+   98  vim .dockerignorefile 
+   99  docker build -t oraclepraphul17032020:v1 .
+  100  cd day2/
+  101  ls
+  102  docker images
+  103  clear
+  104  ls
+  105  git config --global user.name praphulkumar
+  106  git config --global user.email shahi.praphul@gmail.com
+  107  git add .
+  108  pwd
+  109  cd dockerdemomarch172020/
+  110  git add .
+  111  git commit -m "Docker training day2 17th March 2020"
+  112  git push
+  113  clear
+  114  history
+  115  clear
+  116  docker images
+  117  clear
+  118  docker run -d --name praphul1703 -p 1307:80 oraclepraphul17032020:v1
+  119  docker ps
+  120  cd day2/dockerdemomarch172020/
+  121  ls
+  122  cd day2/
+  123  cd dockerdemomarch172020/
+  124  docker images
+  125  clear
+  126  docker tag oraclepraphul17032020:v1 dockerpraphul/oraclepraphul17032020:v1
+  127  docker login
+  128  docker push dockerpraphul/oraclepraphul17032020:v1
+  129  vim /home/praphul/.docker/config.json
+  130  docker logout
+  131  clear
+  132  cd day2/
+  133  mkdir pyapp
+  134  cd pyapp/
+  135  vim hello.py
+  136  python hello.py 
+  137  clear
+  138  vim praphul.dockerfile
+  139  cd day2/
+  140  docker network create praphulbr --subnet 172.36.0.0/16
+  141  docker inspect praphul
+  142  docker inspect praphulbr
+  143  clear
+  144  docker run -d --name praphul1703 --net praphulbr alpine ping fb.com
+  145  cd day2/pyapp/
+  146  ls
+  147  ls -a
+  148  vim .praphul.dockerfile.swp
+  149  vim praphul.dockerfile
+  150  rm .praphul.dockerfile.swp
+  151  vim praphul.dockerfile
+  152  ls
+  153  docker build -f praphul.dockerfile -t praphulpy:v1
+  154  docker build -f praphul.dockerfile -t praphulpy:v1 .
+  155  clear
+  156  docker images
+  157  pwd
+  158  cd day2/
+  159  ls
+  160  mkdir finalimage
+  161  cd finalimage/
+  162  vim Dockerfile
+  163  docker build -t praphulfedora:v2 .
+  164  clear
+  165  vim Dockerfile 
+  166  docker build -t praphulenvvar:v1 .
+  167  docker run -it --name praphulenvvar praphulenvvar:v1
+  168  ls
+  169  docker run -it -e db_user=praphul --name praphulenv2 praphulenvvar:v1 env
+  170  ipconfig docker0
+  171  ifconfig docker0
+  172  clear
+  173  docker volume create praphul
+  174  ls
+  175  cd  praphulday3/
+  176  ls
+  177  cd ..
+  178  ls
+  179  cd day3
+  180  ls
+  181  vim  docker-compose.yml 
+  182  docker-compose up  -d
+  183  vim  docker-compose.yml 
+  184  docker-compose up  -d
+  185  pwd
+  186  ls
+  187  mkdir day3
+  188  cd day
+  189  cd day3
+  190  vim praphul.py
+  191  vim Dockerfile
+  192  vim docker-compose.yml
+  193  clear
+  194  docker-compose up -build -d
+  195  clear
+  196  docker-compose up --build -d
+  197  vim docker-compose.yml 
+  198  docker-compose up --build -d
+  199  vim docker-compose.yml 
+  200  ls
+  201  vim Dockerfile
+  202  docker-compose up --build -d
+  203  vim docker-compose.yml 
+  204  cat docker-compose.yml 
+  205  ls
+  206  pwd
+  207  clear
+  208  ls
+  209  vim docker-compose.yml
+  210  cd ../
+  211  ls
+  212  git config --global user.name praphulkumar
+  213  git config --global user.email shahi.praphul@gmail.com
+  214  git add .
+  215  pwd
+  216  ls
+  217  ls day2
+  218  pwd
+  219  ls
+  220  cp -r praphul day3 praphulday3 day2/dockerdemomarch172020/
+  221  cd day2/dockerdemomarch172020/
+  222  git add .
+  223  git config --global user.name praphulkumar
+  224  git config --global user.email shahi.praphul@gmail.com
+  225  git add .
+  226  clear
+  227  git commit -m "Docker training day3 18th March 2020"
+  228  git push
+  229  cd 
+  230  ls
+  231  cd day
+  232  cd day3
+  233  mkdir praphulday3
+  234  cd praphulday3/
+  235  vim docker-compose.yml
+  236  docker-compose up
+  237  docker-compose up -d
+  238  docker-compose down
+  239  cd day3/
+  240  ls
+  241  cd ../
+  242  ls
+  243  cd praphulwebapp3day3/
+  244  git clone https://github.com/mdn/beginner-html-site-styled
+  245  clear
+  246  vim docker-compose.yml
+  247  docker-compose up --build -d
+  248  ls
+  249  clear
+  250  cd day3
+  251  cd ../
+  252  mkdir praphulwebapp3day3
+  253  cd praphulwebapp3day3/
+  254  clear
+  255  ls
+  256  vim docker-compose.yml
+  257  mv Dockerfile praphul.dockerfile
+  258  ls
+  259  docker-compose.yml up --build -d
+  260  pwd
+  261  ls
+  262  docker-compose up --build -d
+  263  docker-compose down
+  264  clear
+  265  cat docker-compose.yml 
+  266  ls
+  267  vim praphul.py 
+  268  docker-compose up --build -d
+  269  docker-compose ps
+  270  cd praphulwebapp3day3/
+  271  docker run -d --name praphul -e MYSQK_ROOT_PASSWORD=welcome1 mysql
+  272  docker exce it praphul bash
+  273  docker exec it praphul bash
+  274  docker exec -it praphul bash
+  275  docker start 914f0fc207d751872d3206962c89353815bfe7a8821d906c72915fa0a60fa531
+  276  clear
+  277  docker exec -it praphul bash
+  278  cd day3
+  279  ls
+  280  docker-compose up --build -d
+  281  docker-compose ps
+  282  cd praphulwebapp3day3/
+  283  ls
+  284  mv docker-compose.yml old.docker-compose.yml 
+  285  vim docker-compose.yml
+  286  clear
+  287  cd praphulday3/
+  288  vim docker-compose.yml 
+  289  ls -a
+  290  ls
+  291  cd ../
+  292  ls
+  293  cd praphulwebapp3day3
+  294  ls
+  295  ls -a
+  296  vim docker-compose.yml.swp
+  297  docker-compose up --build -d
+  298  ls
+  299  mv docker-compose.yml.swp docker-compose.yml
+  300  clear
+  301  docker-compose up --build -d
+  302  cat docker-compose.yml 
+  303  who
+  304  kubectl
+  305  kubectl --version
+  306  kubectl version
+  307  pwd
+  308  ls
+  309  clear
+  310  wget  http://35.169.32.210/admin.conf
+  311  kubectl version --kubeconfig admin.conf
+  312  kubectl get node --kubeconfig admin.conf
+  313  kubectl get nodes --kubeconfig admin.conf
+  314  echo $HOME
+  315  cp admin.conf \$HOME/.kube/config
+  316  ls /home/praphul/.kube
+  317  cp admin.conf /home/praphul/.kube/config
+  318  clear
+  319  kubectl get nodes
+  320  kubectl version
+  321  clear
+  322  mkdir 4day
+  323  clear
+  324  cd 4day/
+  325  mkdir pods
+  326  cd pods
+  327  ls
+  328  vim praphulpod1.yml
+  329  kubctl create -f praphulpod1.yml 
+  330  kubectl create -f praphulpod1.yml 
+  331  vim praphulpod1.yml
+  332  clear
+  333  kubectl create -f praphulpod1.yml 
+  334  vim praphulpod1.yml
+  335  kubectl get pods
+  336  kubectl get pods -o wide
+  337  vim ~/.bashrc 
+  338  source ~/.bashrc
+  339  clear
+  340  kubectl run praphulpod2 --image=dockerpraphul/oraclepraphul17032020:v1 --restart=Never --dry-run -o yaml
+  341  clear
+  342  ls
+  343  cd 4day/
+  344  ls
+  345  cd pods/
+  346  ls
+  347  kubectl run praphulpod2 --image=dockerpraphul/oraclepraphul17032020:v1 --restart=Never --dry-run -o yaml > pod2praphul.yml
+  348  ls
+  349  vim pod2praphul.yml
+  350  kubectl create -f pod2praphul.yml
+  351  clear
+  352  kubectl get pods praphulpod2 --show-labels 
+  353  clear
+  354  kubectl create service nodeport praphulsvc1 --tcp 80 --dry-run -o yaml > praphulsvc1.yml
+  355  ls
+  356  mv praphulsvc1.yml 4day/
+  357  cd 4day/
+  358  ls
+  359  mv praphulsvc1.yml pods/
+  360  cd pods/
+  361  kubectl create service nodeport praphulsvc1 --tcp 80 --dry-run -o yaml
+  362  vim praphulsvc1.yml 
+  363  cat praphulsvc1.yml
+  364  kubectl create -f praphulsvc1.yml
+  365  clear
+  366  kubectl get services 
+  367  kubectl get services -o wide
+  368  clear
+  369  cd 4day/pods/
+  370  ls
+  371  kubectl get pods -o wide
+  372  kubectl get pods praphulpod2 -o wide
+  373  cd 4day/pods/
+  374  kubectl pods
+  375  kubectl get pods
+  376  ls
+  377  cat praphulsvc1.yml
+  378  cat praphulsvc1.yml >> pod2praphul.yml
+  379  vim pod2praphul.yml
+  380  kubectl create -f pod2praphul.yml
+  381  clear
+  382  kubectl get pod,svc
+  383  kubectl describe pod,svc service/praphulsvc1
+  384  kubectl describe svc service
+  385  kubectl describe pods praphulsvc1
+  386  kubectl describe pods praphulpod2
+  387  clear
+  388  kubectl get pod,svc
+  389  pwd
+  390  cd ../
+  391  mkdir deployments
+  392  cd deployments/
+  393  create deployment praphul --image=nginx --dry-run -o yaml
+  394  kubectl create deployment praphul --image=nginx --dry-run -o yaml
+  395  kubectl create deployment praphul --image=nginx --dry-run -o yaml > praphuldep1.yml
+  396  clear
+  397  vim praphuldep1.yml
+  398  kubectl create service nodeport --tcp 80 -o yaml 
+  399  kubectl create service nodeport --tcp 80 --dry-run -o yaml 
+  400  kubectl create service nodeport praphulsvc2 --tcp 80 --dry-run -o yaml 
+  401  kubectl create service nodeport praphulsvc2 --tcp 80 --dry-run -o yaml >> praphuldep1.yml
+  402  vim praphuldep1.yml
+  403  kubectl create -f praphuldep1.yml
+  404  clear
+  405  clear
+  406  kubectl get pods 
+  407  kubectl get pods praphulpod2
+  408  kubectl get pods praphulpod2 -o wide
+  409  kubectl get nodes 
+  410  clear
+  411  ls
+  412  cd 4day/pods/
+  413  ls
+  414  cat praphulsvc1.yml
+  415  cat praphulpod1.yml
+  416  cat pod2praphul.yml
+  417  cd 5day/
+  418  ls
+  419  vim praphulday5deployment.yml 
+  420  kubectl apply -f praphulday5deployment.yml -n praphul
+  421  kubectl get all -n praphul
+  422  clear
+  423  vim praphulday5deployment.yml 
+  424  kubectl apply -f praphulday5deployment.yml -n praphul
+  425  kubectl get all -n praphul
+  426  kubectl edit svc praphulday5 -n praphul
+  427  kubectl get all -n praphul
+  428  kubectl scale deployment praphul5dep1 --replicas=5 -n praphul
+  429  kubectl get all -n praphul
+  430  kubectl get deployment praphul5dep1 --export -o yaml -n praphul
+  431  kubectl get deployment praphul5dep1 --export -o yaml -n praphul > export.yml
+  432  ls
+  433  clear
+  434  mkdir v2_appupg
+  435  cd v2_appupg/
+  436  docker build -t praphulkumar/dockerdemomarch172020:v2 https://github.com/praphulkumar/dockerdemomarch172020.git
+  437  pwd
+  438  git config --global user.name praphulkumar
+  439  git config --global user.email shahi.praphul@gmail.com
+  440  docker build -t praphulkumar/dockerdemomarch172020:v2 https://github.com/praphulkumar/dockerdemomarch172020.git
+  441  docker build -t dockerpraphul:v2 https://github.com/praphulkumar/dockerdemomarch172020.git
+  442  /
+  443  docker build -t dockerpraphul/oraclepraphul17032020:v2 https://github.com/praphulkumar/dockerdemomarch172020.git
+  444  clear
+  445  docker build -t dockerpraphul/oraclepraphul17032020:v2 https://github.com/redashu/march172020thoraclewebapp
+  446  docker build -t dockerpraphul/oraclepraphul17032020:v2 https://github.com/redashu/march172020thoraclewebapp.git
+  447  docker login
+  448  docker push dockerpraphul/oraclepraphul17032020:v2
+  449  docker logout
+  450  clear
+  451  kubectl get all -n praphul
+  452  kubectl describe deploy praphul5dep1 -n praphul
+  453  kubectl edit deploy praphul5dep1 -n praphul
+  454  kubectl get po -n praphul
+  455  kubectl describe deploy praphul5dep1 -n praphul
+  456  kubectl get deploy -n praphul
+  457  clear
+  458  kubectl get all -n praphul
+  459  kubectl edit deploy praphul5dep1 -n praphul
+  460  kubectl get all -n praphul
+  461  clear
+  462  history
+  463  clear
+  464  history > history.log

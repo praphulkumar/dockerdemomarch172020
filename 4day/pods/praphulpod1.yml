@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+        name: praphulpod1 #this pod name must be unique as of now
+spec:
+        containers:
+                - name: praphul
+                  image: nginx
+
+

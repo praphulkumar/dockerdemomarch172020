@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+  prapdb:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always    #  it is restart  policy in docker  container
+    environment:   #  this env variable for mysql  root  password
+      MYSQL_ROOT_PASSWORD: oracle123
+
+  prapfrontapp:
+    image: adminer
+    container_name: prapwebcc11
+    depends_on:
+     - prapdb       #  it will wait for  ashudb  service  then it will connect
+    restart: always
+    ports:
+      - 8013:8080

@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+ praphul:
+  image: nginx
+  container_name: praphul5
+  ports:
+   - "7684:80"
+  volumes:
+   - "./beginner-html-site-styled:/usr/share/nginx/html/"
+

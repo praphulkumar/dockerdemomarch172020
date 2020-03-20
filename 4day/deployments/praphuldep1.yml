@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null # time for create/update of deployment
+  labels:
+    app: praphul #label of deployment which is same as label of pods
+  name: praphul # name  of  deployment
+spec:
+  replicas: 1 #this will create replicaset  with  one  pod count
+  selector:
+    matchLabels:
+      app: praphul
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: praphul
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: praphulsvc2
+  name: praphulsvc2
+spec:
+  ports:
+  - name: "80"
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+          app: praphul #match the name same as selector
+  type: NodePort
+status:
+  loadBalancer: {}

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: praphul5dep1
+  name: praphul5dep1     #  this is name of  deployment 
+spec:
+  replicas: 3    #  this will create a replicaset  that will be creating one pod
+  selector:
+    matchLabels:
+      app: praphul5dep1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: praphul5dep1
+    spec:
+      containers:
+      - image: dockerashu/oraclewebappashu2020317:v1
+        name: oraclewebappashu2020317
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: praphulday5     #  there is no use of  label as of now  in pod 
+  name: praphulday5
+spec:
+  ports:
+  - name: "80"
+    port: 80     #  service ip  port 
+    protocol: TCP
+    targetPort: 80   #  this is application  port in the container 
+  selector:
+    app: praphul5dep1      #  this must  match  the lable of  pod 
+  type: NodePort 

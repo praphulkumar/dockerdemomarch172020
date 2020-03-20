@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null # Optional field, here we can write time about updation/creation
+  labels:
+    x: praphulwebapp # This is label of my pod
+  name: praphulpod2
+spec:
+  containers:
+  - image: dockerpraphul/oraclepraphul17032020:v1
+    name: praphulpod2
+    ports:
+    - containerPort: 80 # this port will be same as docker file expose port, this is optional
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: praphulsvc1 #My service name
+spec:
+  ports:
+  - name: mypraphul
+    port: 80
+    protocol: TCP
+    targetPort: 80 #same as container port in the pod
+  selector:
+    x: praphulwebapp
+  type: NodePort
